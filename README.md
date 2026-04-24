@@ -23,12 +23,8 @@ AI 뉴스를 실시간으로 수집해 Kafka로 스트리밍하고 Elasticsearch
 | 외부 API | Naver News API, HackerNews Firebase API |
 
 
-## 결과 
+## 결과 및 주요 기능
 <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/b5b88cac-ac71-4eac-887b-9e74b840438d" />
-
-
-
-## 주요 기능
 
 - **한국어/해외 뉴스 동시 수집** — 네이버 뉴스(한국어), HackerNews(영어) AI 관련 뉴스 수집
 - **키워드 기반 인덱스 분리** — `naver-인공지능`, `hackernews-llm` 등 키워드별 Elasticsearch 인덱스 자동 생성
