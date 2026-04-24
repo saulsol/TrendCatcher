@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: news-data-collector
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+naver:
+  client-id: ${NAVER_CLIENT_ID}
+  client-secret: ${NAVER_CLIENT_SECRET}
+
+elasticsearch:
+  host: https://localhost:9200
+  username: ${ES_USERNAME:elastic}
+  password: ${ES_PASSWORD:elastic}
+  ca-cert-path: /Users/imsol/nospoon/elastic/cluster1/elasticsearch-8.1.3/config/certs/http_ca.crt
+
+news:
+  keywords:
+    - 인공지능
+    - AI
+    - LLM
+    - 반도체
+    - 챗GPT
+
+
+kafka:
+  topic:
+    news-korean: news-korean
+    news-global: news-global
