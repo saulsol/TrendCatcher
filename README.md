@@ -8,11 +8,8 @@ AI 뉴스를 실시간으로 수집해 Kafka로 스트리밍하고 Elasticsearch
 
 ## 아키텍처
 
-```
-Naver News API ──┐
-                 ├──▶ Spring Boot ──▶ Kafka ──▶ Logstash ──▶ Elasticsearch ──▶ Kibana
-HackerNews API ──┘
-```
+<img width="600" height="350" alt="trendCatcher" src="https://github.com/user-attachments/assets/4fea0be1-24fd-4a45-81f2-2597998d3c2b" />
+
 
 ## 기술 스택
 
@@ -24,6 +21,12 @@ HackerNews API ──┘
 | Search & Storage | Elasticsearch 8.x |
 | Visualization | Kibana |
 | 외부 API | Naver News API, HackerNews Firebase API |
+
+
+## 결과 
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/b5b88cac-ac71-4eac-887b-9e74b840438d" />
+
+
 
 ## 주요 기능
 
