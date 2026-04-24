@@ -52,3 +52,47 @@ NAVER_CLIENT_SECRET=
 ES_USERNAME=elastic
 ES_PASSWORD=elastic
 ```
+
+## Log Stash Config
+
+```
+input {
+  kafka {
+    bootstrap_servers => "localhost:9092"
+    topics => ["news-korean", "news-global"]
+    codec => "json"
+    group_id => "log-consumer-test"
+    auto_offset_reset => "earliest"
+    fetch_min_bytes => "1"
+    fetch_max_wait_ms => "500"
+  }
+}
+filter {
+  mutate{
+    lowercase => ["keyword", "source"]
+    gsub => ["keyword", " ", "-"]
+  }
+  date {
+    match => ["publishedAt", "ISO8601", "EEE, dd MMM yyyy HH:mm:ss Z"]
+    target => "@timestamp"
+  }
+}
+output {
+  elasticsearch {
+    hosts => ["https://localhost:9200"]
+    index => "%{source}-%{keyword}"
+    user => "elastic"
+    password => "elastic"
+    ssl_enabled => true
+    ssl_certificate_authorities => ["~"]
+  }
+}
+
+```
+
+
+
+
+
+
+
