@@ -4,7 +4,7 @@ AI 뉴스를 실시간으로 수집해 Kafka로 스트리밍하고 Elasticsearch
 
 ## 프로젝트 개요
 
-네이버 뉴스 API와 HackerNews를 통해 AI 관련 한국어/해외 뉴스를 수집하고, Apache Kafka로 스트리밍하여 Elasticsearch에 키워드 기반으로 인덱싱하는 준실시간 뉴스 파이프라인입니다. Spring Boot WebFlux 기반의 비동기 수집, URL 중복 제거, 한국어 형태소 분석(nori)을 지원하며 Kibana 대시보드로 트렌드를 시각화합니다.
+네이버 뉴스 API와 HackerNews를 통해 AI 관련 한국어/해외 뉴스를 수집하고, Apache Kafka로 스트리밍하여 Elasticsearch에 키워드 기반으로 인덱싱하는 실시간 뉴스 파이프라인입니다. Spring Boot WebFlux 기반의 비동기 수집, URL 중복 제거, 한국어 형태소 분석(nori)을 지원하며 Kibana 대시보드로 트렌드를 시각화합니다.
 
 ## 아키텍처
 
