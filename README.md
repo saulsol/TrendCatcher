@@ -65,6 +65,7 @@ input {
     auto_offset_reset => "earliest"
     fetch_min_bytes => "1"
     fetch_max_wait_ms => "500"
+    consumer_threads => 3
   }
 }
 filter {
