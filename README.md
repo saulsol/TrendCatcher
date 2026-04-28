@@ -53,6 +53,12 @@ ES_USERNAME=elastic
 ES_PASSWORD=elastic
 ```
 
+## 성능 튜닝 및 개선 포인트
+
+- **Kafka 파티션 3개 적용** — `news-korean`, `news-global` 토픽 각 3개 파티션으로 구성
+- **Logstash consumer_threads 3개** — 파티션 수에 맞춰 병렬 컨슈머 스레드 설정
+- 현재는 프로듀서가 단일 인스턴스이고 수집량이 적어 체감 성능 차이는 미미하나, 수집 소스 또는 키워드 확장 시 병렬 처리 효과를 기대할 수 있는 구조로 설계
+
 ## Log Stash Config
 
 ```
